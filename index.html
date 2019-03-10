@@ -78,7 +78,7 @@
     In the terminal, enable the camera by typing <code>sudo raspi-config</code>. With the arrow keys on the keyboard, select "Interfacing Options", then "Camera". Select the "Enable" option and press "Yes" to reboot. The Pi will enable its camera dependencies for use in the program.</p>
     <h2>Main Script</h2>
     <p>Create a new Python 3.XX file. At the top, establish the definition for the Dropbow-Upload code to use later.</p>
-    <pre><code>def restart():<br>   timestamp=datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")<br>   camera.capture(timestamp+".jpg")<br>    photofile = "/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload /home/pi/Desktop/Projects/ThotShot/"+timestamp+".jpg "+timestamp+".jpg "<br>    call([photofile], shell=True)</code></pre>
+    <pre><code>def restart():<br>   timestamp=datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")<br>   camera.capture(timestamp+".jpg")<br>   photofile = "/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload /home/pi/Desktop/Projects/ThotShot/"+timestamp+".jpg "+timestamp+".jpg "<br>   call([photofile], shell=True)</code></pre>
             </section>
       <footer>
         <p>This page is maintained by <a href="http://github.com/jkmarold55">Jake Marold</a></p>
