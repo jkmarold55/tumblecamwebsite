@@ -15,7 +15,7 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Tumble</h1>
+        <h1>Tumble Cam</h1>
         <p>A Raspberry Pi-Powered Camera for the Social Generation</p>
         <p class="view"><a href="https://github.com/jkmarold55/tumblecamera">View the Project on GitHub <small>jkmarold55/tumblecamera</small></a></p>
         <ul>
@@ -25,6 +25,7 @@
         </ul>
       </header>
       <section>
+        <img src="/images/top.jpg" alt="top view of camera">
         <h1>Overview</h1>
 
         <p><b>TumbleCam</b> is a digital camera that takes photographs and uploads them to Tumblr. When the shutter is pressed on the camera, a picture is taken and then uploaded to Dropbox, then it is transfered from there to the Tumblr page, where it is added to the feed.</p>
@@ -79,7 +80,7 @@
     <h2>Main Script</h2>
     <p>Create a new Python 3.XX file. At the top, establish the definition for the Dropbow-Upload code to use later. It will also set up timestamping for the image filenames.</p>
     <pre><code>def restart():<br>   timestamp=datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")<br>   camera.capture(timestamp+".jpg")<br>   photofile = "/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload /home/pi/[PATH_TO_YOUR_PROJECT_FILES]"+timestamp+".jpg "+timestamp+".jpg "<br>   call([photofile], shell=True)</code></pre>
-    <p>Then, import the dependencies:</p>
+    <p>Then, import the dependencies seperate from the definition:</p>
     <pre><code>from picamera import PiCamera<br>from gpiozero import Button<br>from subprocess import call<br>from time import sleep<br>import datetime</code></pre>
             </section>
       <footer>
