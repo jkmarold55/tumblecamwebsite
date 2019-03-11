@@ -11,9 +11,38 @@ h1, h2, h3, h4, h5, h6 {
   margin:0 0 20px;
 }
 
-p, ul, ol, table, pre, dl {
+#switch {
+  visibility: hidden;
+  position: absolute;
+}
+
+.switch-label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s all ease;
+}
+
+.switch-label .toggle {
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    background-color: #222;
+    position: absolute;
+    left: 3px;
+    transition: .5s all ease;
+}
+
+p, ol, table, pre, dl {
   margin:0 0 20px;
 }
+
 
 h1, h2, h3 {
   line-height:1.1;
@@ -57,6 +86,22 @@ a:hover small {
 .wrapper {
   width:860px;
   margin:0 auto;
+  transition: 1s all ease;
+}
+
+#switch:checked ~ .switch-label {
+    background: #222;
+    border: none;
+    transition: .5s all ease;
+}
+
+#switch:checked ~ .switch-label .toggle {
+    height: 12.5px;
+    border-radius: 25px 25px 0 0;
+    background: transparent;
+    box-shadow: 0 -6px 0 0 #fff;
+    transform: scale(0.9) translateX(75px) rotate(90deg);
+    transition: .7s all ease;
 }
 
 blockquote {
