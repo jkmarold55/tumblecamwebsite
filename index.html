@@ -82,10 +82,10 @@
               <pre><code>def restart():<br>   timestamp=datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")<br>   camera.capture(timestamp+".jpg")<br>   photofile = "/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload /home/pi/[PATH_TO_YOUR_PROJECT_FILES]"+timestamp+".jpg "+timestamp+".jpg "<br>   call([photofile], shell=True)</code></pre>
               <p>Then, import the dependencies seperate from the definition:</p>
               <pre><code>from picamera import PiCamera<br>from gpiozero import Button<br>from subprocess import call<br>from time import sleep<br>import datetime</code></pre>
-              <input type="checkbox" name="" id="switch">
+              <!--input type="checkbox" name="" id="switch">
               <label for="switch" class="switch-label"
               <div class="toggle"></div>
-              </label>
+              </label>-->
           </section>
           <footer>
               <p>This page is maintained by <a href="http://github.com/jkmarold55">Jake Marold</a></p>
