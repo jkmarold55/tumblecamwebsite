@@ -104,6 +104,11 @@ a:hover small {
     transition: .7s all ease;
 }
 
+.dark {
+    background: #000;
+    transition: 1s all ease;
+}
+
 blockquote {
   border-left:1px solid #e5e5e5;
   margin:0;
