@@ -84,7 +84,6 @@ a:hover small {
 }
 
 .wrapper {
-  display: flex;
   width:860px;
   margin:0 auto;
   transition: 1s all ease;
