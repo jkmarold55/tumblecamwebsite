@@ -13,92 +13,93 @@
     <![endif]-->
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Tumble Cam</h1>
-        <p>A Raspberry Pi-Powered Camera for the Social Generation</p>
-        <p class="view"><a href="https://github.com/jkmarold55/tumblecamera">View the Project on GitHub <small>jkmarold55/tumblecamera</small></a></p>
-        <ul>
-          <li><a href="https://github.com/jkmarold55/tumblecamera/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/jkmarold55/tumblecamera/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://thetumblecam.tumblr.com">View on <strong>Tumblr</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>Overview</h1>
+      <div class="wrapper">
+          <header>
+              <h1>Tumble Cam</h1>
+              <p>A Raspberry Pi-Powered Camera for the Social Generation</p>
+              <p class="view"><a href="https://github.com/jkmarold55/tumblecamera">View the Project on GitHub <small>jkmarold55/tumblecamera</small></a></p>
+              <ul>
+                  <li><a href="https://github.com/jkmarold55/tumblecamera/zipball/master">Download <strong>ZIP File</strong></a></li>
+                  <li><a href="https://github.com/jkmarold55/tumblecamera/tarball/master">Download <strong>TAR Ball</strong></a></li>
+                  <li><a href="https://thetumblecam.tumblr.com">View on <strong>Tumblr</strong></a></li>
+              </ul>
+          </header>
+          <section>
+              <h1>Overview</h1>
 
-        <p><b>TumbleCam</b> is a digital camera that takes photographs and uploads them to Tumblr. When the shutter is pressed on the camera, a picture is taken and then uploaded to Dropbox, then it is transfered from there to the Tumblr page, where it is added to the feed.</p>
-        <img src="/images/top-min.jpg" alt="top view of camera">
-        <br>
+              <p><b>TumbleCam</b> is a digital camera that takes photographs and uploads them to Tumblr. When the shutter is pressed on the camera, a picture is taken and then uploaded to Dropbox, then it is transfered from there to the Tumblr page, where it is added to the feed.</p>
+              <img src="/images/top-min.jpg" alt="top view of camera">
+              <br>
 
-      
 
-        <h2>Materials</h2>
-        
-        <p>All materials that we used to build the camera are accompanied by Amazon links. <i><b>Note:</b> The links are not affiliate linked.</i></p>
-        
-        <ul>
-          <li><b>Raspberry Pi 3</b> Model B</b><a href="https://www.amazon.com/Raspberry-Pi-RASPBERRYPI3-MODB-1GB-Model-Motherboard/dp/B01CD5VC92/"> Purchase</a></li>
-          <ul>
-            <li>The Model B edition of the Raspberry Pi is camera-sized and has WiFi capabilities, allowing for an untethered, mobile camera.</li>
-          </ul>
-          <li><b>Raspberry Pi</b> Camera Module V2<a href="https://www.amazon.com/Raspberry-Pi-Camera-Module-Megapixel/dp/B01ER2SKFS"> Purchase</a></li>
-          <ul>
-            <li>After experimenting with a larger camera, the V2 was chosen because it was low profile (keeping the camera profile small) and it had excellent quality. The images come out at a crisp 1080p.</li>
-          </ul>
-          <li><b>NovoBeam NBP-3000</b> External Battery<a href="https://www.amazon.com/Novobeam-Ultra-Compact-Waterproof-Dustproof-Portable/dp/B00K3EUE90"> Purchase</a></li>
-          <ul>
-            <li>While the cylindrical shape was awkward, it suited the project's purposes because it was tin enough to simply be tethered to the side of the camera with velcro or even be used as a hand grip if mounted below the camera.</li>
-          </ul>
-          <li><b>MicroSD Card</b> <a href="https://www.amazon.com/Sandisk-Ultra-Micro-UHS-I-Adapter/dp/B073K14CVB/"> Purchase</a></li>
-          <ul>
-            <li>We recommend a 16GB SD card because the images will be stored locally as well as in the cloud for redundancy. More available space will allow more images to be taken before having to go into the project files and manually delete them.</li>
-            <li><b>Raspbian</b> is the operating system of choice. It is easy to use, and simple to set up.<a href="https://www.raspberrypi.org/downloads/raspbian/"> Download</a></li>
-          </ul>
-          <li><b>UCTRONICS UC-430</b> 3.5" Touch Display<a href="https://www.amazon.com/UCTRONICS-Display-Touch-Screen-Raspberry/"> Purchase</a></li>
-          <ul>
-            <li>The display serves to give the user a live preview of the image before it is taken as the viewfinder of the device. 3.5 inches allows it to be roughly the same size as the Raspberry Pi, allowing it to fit snugly in a case with the computer.</li>
-          </ul>
-        <h3>Chassis <i>Optional</i></h3>
-          <li><b>3D Printer</b></li>
-          <ul>
-            <li>While this may not be accessible to most, the printer allows for the whole device to come together as a working, finished product by producing a plastic chassis for the camera. The case will contain the buttons, wires, and other cables, preventing them from sticking out and having to carry a breadboard while using the camera.</li>
-          </ul>
-        </ul>
 
-    <h1>Code</h1>
-    <h2>Dropbox Uploader</h2>
-    <p>Extract this folder to the /home/pi directory. The main Python code will reference this library when it runs.</p>
-    <p><a href="https://github.com/jkmarold55/tumblecamwebsite/blob/gh-pages/Dropbox-Uploader-master.zip">Download</a></p>
-    <p>Next, authenticate Dropbox by running the following script:</p>
-    <pre><code>#If you get an "Insufficient privilages" error, run the BASH commands as SUDO.<br>$chmod +x /home/pi/Dropbox-Uploader-master/dropbox_uploader.sh<br>$./home/pi/Dropbox-Uploader-master/dropbox_uploader.sh
+              <h2>Materials</h2>
+
+              <p>All materials that we used to build the camera are accompanied by Amazon links. <i><b>Note:</b> The links are not affiliate linked.</i></p>
+
+              <ul>
+                  <li><b>Raspberry Pi 3</b> Model B</b><a href="https://www.amazon.com/Raspberry-Pi-RASPBERRYPI3-MODB-1GB-Model-Motherboard/dp/B01CD5VC92/"> Purchase</a></li>
+                  <ul>
+                      <li>The Model B edition of the Raspberry Pi is camera-sized and has WiFi capabilities, allowing for an untethered, mobile camera.</li>
+                  </ul>
+                  <li><b>Raspberry Pi</b> Camera Module V2<a href="https://www.amazon.com/Raspberry-Pi-Camera-Module-Megapixel/dp/B01ER2SKFS"> Purchase</a></li>
+                  <ul>
+                      <li>After experimenting with a larger camera, the V2 was chosen because it was low profile (keeping the camera profile small) and it had excellent quality. The images come out at a crisp 1080p.</li>
+                  </ul>
+                  <li><b>NovoBeam NBP-3000</b> External Battery<a href="https://www.amazon.com/Novobeam-Ultra-Compact-Waterproof-Dustproof-Portable/dp/B00K3EUE90"> Purchase</a></li>
+                  <ul>
+                      <li>While the cylindrical shape was awkward, it suited the project's purposes because it was tin enough to simply be tethered to the side of the camera with velcro or even be used as a hand grip if mounted below the camera.</li>
+                  </ul>
+                  <li><b>MicroSD Card</b> <a href="https://www.amazon.com/Sandisk-Ultra-Micro-UHS-I-Adapter/dp/B073K14CVB/"> Purchase</a></li>
+                  <ul>
+                      <li>We recommend a 16GB SD card because the images will be stored locally as well as in the cloud for redundancy. More available space will allow more images to be taken before having to go into the project files and manually delete them.</li>
+                      <li><b>Raspbian</b> is the operating system of choice. It is easy to use, and simple to set up.<a href="https://www.raspberrypi.org/downloads/raspbian/"> Download</a></li>
+                  </ul>
+                  <li><b>UCTRONICS UC-430</b> 3.5" Touch Display<a href="https://www.amazon.com/UCTRONICS-Display-Touch-Screen-Raspberry/"> Purchase</a></li>
+                  <ul>
+                      <li>The display serves to give the user a live preview of the image before it is taken as the viewfinder of the device. 3.5 inches allows it to be roughly the same size as the Raspberry Pi, allowing it to fit snugly in a case with the computer.</li>
+                  </ul>
+                  <h3>Chassis <i>Optional</i></h3>
+                  <li><b>3D Printer</b></li>
+                  <ul>
+                      <li>While this may not be accessible to most, the printer allows for the whole device to come together as a working, finished product by producing a plastic chassis for the camera. The case will contain the buttons, wires, and other cables, preventing them from sticking out and having to carry a breadboard while using the camera.</li>
+                  </ul>
+              </ul>
+
+              <h1>Code</h1>
+              <h2>Dropbox Uploader</h2>
+              <p>Extract this folder to the /home/pi directory. The main Python code will reference this library when it runs.</p>
+              <p><a href="https://github.com/jkmarold55/tumblecamwebsite/blob/gh-pages/Dropbox-Uploader-master.zip">Download</a></p>
+              <p>Next, authenticate Dropbox by running the following script:</p>
+              <pre><code>#If you get an "Insufficient privilages" error, run the BASH commands as SUDO.<br>$chmod +x /home/pi/Dropbox-Uploader-master/dropbox_uploader.sh<br>$./home/pi/Dropbox-Uploader-master/dropbox_uploader.sh
     </code></pre>
-    <p>The script will ask you to enter an authorization code. You can find this at <a href="https://www.dropbox.com/developers/apps">www.drobox.com/developers/apps</a>. You will have to create a Dropbox Developer account to access this dashboard, where you can create a new API enabled app. There should be a button to generate an API key. Simply copy and paste it into the script when prompted.</p>
-    <p>Special thanks to <a href="https://github.com/andreafabrizi/Dropbox-Uploader">Andrea Fabrizi</a> for the uploader.</p>
-    <h2>Prepare the Raspberry Pi</h2>
-    In the terminal, enable the camera by typing <code>sudo raspi-config</code>. With the arrow keys on the keyboard, select "Interfacing Options", then "Camera". Select the "Enable" option and press "Yes" to reboot. The Pi will enable its camera dependencies for use in the program.</p>
-    <h2>Main Script</h2>
-    <p>Create a new Python 3.XX file. At the top, establish the definition for the Dropbow-Upload code to use later. It will also set up timestamping for the image filenames.</p>
-    <pre><code>def restart():<br>   timestamp=datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")<br>   camera.capture(timestamp+".jpg")<br>   photofile = "/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload /home/pi/[PATH_TO_YOUR_PROJECT_FILES]"+timestamp+".jpg "+timestamp+".jpg "<br>   call([photofile], shell=True)</code></pre>
-    <p>Then, import the dependencies seperate from the definition:</p>
-    <pre><code>from picamera import PiCamera<br>from gpiozero import Button<br>from subprocess import call<br>from time import sleep<br>import datetime</code></pre>
-            </section>
-      <footer>
-        <p>This page is maintained by <a href="http://github.com/jkmarold55">Jake Marold</a></p>
-          
-        <input type="checkbox" name="" id="switch">
-        <label for="switch" class="switch-label"
+              <p>The script will ask you to enter an authorization code. You can find this at <a href="https://www.dropbox.com/developers/apps">www.drobox.com/developers/apps</a>. You will have to create a Dropbox Developer account to access this dashboard, where you can create a new API enabled app. There should be a button to generate an API key. Simply copy and paste it into the script when prompted.</p>
+              <p>Special thanks to <a href="https://github.com/andreafabrizi/Dropbox-Uploader">Andrea Fabrizi</a> for the uploader.</p>
+              <h2>Prepare the Raspberry Pi</h2>
+              In the terminal, enable the camera by typing <code>sudo raspi-config</code>. With the arrow keys on the keyboard, select "Interfacing Options", then "Camera". Select the "Enable" option and press "Yes" to reboot. The Pi will enable its camera dependencies for use in the program.</p>
+              <h2>Main Script</h2>
+              <p>Create a new Python 3.XX file. At the top, establish the definition for the Dropbow-Upload code to use later. It will also set up timestamping for the image filenames.</p>
+              <pre><code>def restart():<br>   timestamp=datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")<br>   camera.capture(timestamp+".jpg")<br>   photofile = "/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload /home/pi/[PATH_TO_YOUR_PROJECT_FILES]"+timestamp+".jpg "+timestamp+".jpg "<br>   call([photofile], shell=True)</code></pre>
+              <p>Then, import the dependencies seperate from the definition:</p>
+              <pre><code>from picamera import PiCamera<br>from gpiozero import Button<br>from subprocess import call<br>from time import sleep<br>import datetime</code></pre>
+          </section>
+          <footer>
+              <p>This page is maintained by <a href="http://github.com/jkmarold55">Jake Marold</a></p>
+
+              <input type="checkbox" name="" id="switch">
+              <label for="switch" class="switch-label"
                <div class="toggle"></div>
           </label>
-             
 
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-   
-    </script>
+
+          </footer>
+      </div>
+      <script src="javascripts/scale.fix.js"></script>
+      <script src="javascripts/scripts.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+              integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+              crossorigin="anonymous"></script>
+
+      </script>
   </body>
 </html>
