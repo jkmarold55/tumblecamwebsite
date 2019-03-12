@@ -82,6 +82,8 @@
     <pre><code>def restart():<br>   timestamp=datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")<br>   camera.capture(timestamp+".jpg")<br>   photofile = "/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload /home/pi/[PATH_TO_YOUR_PROJECT_FILES]"+timestamp+".jpg "+timestamp+".jpg "<br>   call([photofile], shell=True)</code></pre>
     <p>Then, import the dependencies seperate from the definition:</p>
     <pre><code>from picamera import PiCamera<br>from gpiozero import Button<br>from subprocess import call<br>from time import sleep<br>import datetime</code></pre>
+    <p>The code now needs to set up the camera and the shutter button.</p>
+    <pre><code>camera = PiCamera()<br>btn = Button([GPIO_PIN_GOES_HERE])<br>#Start the viewfinder<br>camera.start_preview()<br>#This part made everything right-side-up for us, but if it ends up upside down for you, remove the 180 degree rotation line<br>camera.rotation = 180<br>i = 0<br>v = 0</code></pre>
     <p>Next, the code will reference the definition we created above. Rather than combining the code from the definition into this section of the code, we seperated it so that the program would repeat after every photo, something it wouldn't do before.</p>
     <pre><code></code></pre>
             </section>
