@@ -67,25 +67,28 @@
         </ul>
 
     <h1>Code</h1>
-    <h2>Dropbox Uploader</h2>
-    <p>Extract this folder to the /home/pi directory. The main Python code will reference this library when it runs.</p>
-    <p><a href="https://github.com/jkmarold55/tumblecamwebsite/blob/gh-pages/Dropbox-Uploader-master.zip">Download</a></p>
-    <p>Next, authenticate Dropbox by running the following script:</p>
-    <pre><code>#If you get an "Insufficient privilages" error, run the BASH commands as SUDO.<br>$chmod +x /home/pi/Dropbox-Uploader-master/dropbox_uploader.sh<br>$./home/pi/Dropbox-Uploader-master/dropbox_uploader.sh
-    </code></pre>
-    <p>The script will ask you to enter an authorization code. You can find this at <a href="https://www.dropbox.com/developers/apps">www.drobox.com/developers/apps</a>. You will have to create a Dropbox Developer account to access this dashboard, where you can create a new API enabled app. There should be a button to generate an API key. Simply copy and paste it into the script when prompted.</p>
-    <p>Special thanks to <a href="https://github.com/andreafabrizi/Dropbox-Uploader">Andrea Fabrizi</a> for the uploader.</p>
-    <h2>Prepare the Raspberry Pi</h2>
-    In the terminal, enable the camera by typing <code>sudo raspi-config</code>. With the arrow keys on the keyboard, select "Interfacing Options", then "Camera". Select the "Enable" option and press "Yes" to reboot. The Pi will enable its camera dependencies for use in the program.</p>
-    <h2>Main Script</h2>
-    <p>Create a new Python 3.XX file. At the top, establish the definition for the Dropbow-Upload code to use later. It will also set up timestamping for the image filenames.</p>
-    <pre><code>def restart():<br>   timestamp=datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")<br>   camera.capture(timestamp+".jpg")<br>   photofile = "/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload /home/pi/[PATH_TO_YOUR_PROJECT_FILES]"+timestamp+".jpg "+timestamp+".jpg "<br>   call([photofile], shell=True)</code></pre>
-    <p>Then, import the dependencies seperate from the definition:</p>
-    <pre><code>from picamera import PiCamera<br>from gpiozero import Button<br>from subprocess import call<br>from time import sleep<br>import datetime</code></pre>
-    <p>The code now needs to set up the camera and the shutter button.</p>
-    <pre><code>camera = PiCamera()<br>btn = Button([GPIO_PIN_GOES_HERE])<br>#Start the viewfinder<br>camera.start_preview()<br>#This part made everything right-side-up for us, but if it ends up upside down for you, remove the 180 degree rotation line<br>camera.rotation = 180<br>i = 0<br>v = 0</code></pre>
-    <p>Next, the code will reference the definition we created above. Rather than combining the code from the definition into this section of the code, we seperated it so that the program would repeat after every photo, something it wouldn't do before.</p>
-    <pre><code></code></pre>
+      <h2>Dropbox Uploader</h2>
+        <p>Extract this folder to the /home/pi directory. The main Python code will reference this library when it runs.</p>
+          <p><a href="https://github.com/jkmarold55/tumblecamwebsite/blob/gh-pages/Dropbox-Uploader-master.zip">Download</a></p>
+        <p>Next, authenticate Dropbox by running the following script:</p>
+          <pre><code>#If you get an "Insufficient privilages" error, run the BASH commands as SUDO.<br>$chmod +x /home/pi/Dropbox-Uploader-master/dropbox_uploader.sh<br>$./home/pi/Dropbox-Uploader-master/dropbox_uploader.sh
+          </code></pre>
+        <p>The script will ask you to enter an authorization code. You can find this at <a href="https://www.dropbox.com/developers/apps">www.drobox.com/developers/apps</a>. You will have to create a Dropbox Developer account to access this dashboard, where you can create a new API enabled app. There should be a button to generate an API key. Simply copy and paste it into the script when prompted.</p>
+        <p>Special thanks to <a href="https://github.com/andreafabrizi/Dropbox-Uploader">Andrea Fabrizi</a> for the uploader.</p>
+      <h2>Prepare the Raspberry Pi</h2>
+        <p>In the terminal, enable the camera by typing <code>sudo raspi-config</code>. With the arrow keys on the keyboard, select "Interfacing Options", then "Camera". Select the "Enable" option and press "Yes" to reboot. The Pi will enable its camera dependencies for use in the program.</p>
+      <h2>Main Script</h2>
+        <p>Create a new Python 3.XX file. At the top, establish the definition for the Dropbow-Upload code to use later. It will also set up timestamping for the image filenames.</p>
+          <pre><code>def restart():<br>   timestamp=datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")<br>   camera.capture(timestamp+".jpg")<br>   photofile = "/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload /home/pi/[PATH_TO_YOUR_PROJECT_FILES]"+timestamp+".jpg "+timestamp+".jpg "<br>   call([photofile], shell=True)</code></pre>
+        <p>Then, import the dependencies seperate from the definition:</p>
+          <pre><code>from picamera import PiCamera<br>from gpiozero import Button<br>from subprocess import call<br>from time import sleep<br>import datetime</code></pre>
+        <p>The code now needs to set up the camera and the shutter button.</p>
+          <pre><code>camera = PiCamera()<br>btn = Button([GPIO_PIN_GOES_HERE])<br>#Start the viewfinder<br>camera.start_preview()<br>#This part made everything right-side-up for us,<br>#but if it ends up upside down for you, remove the<br>#180 degree rotation line<br>camera.rotation = 180<br>i = 0<br>v = 0</code></pre>
+        <p>Next, the code will reference the definition we created above. Rather than combining the code from the definition into this section of the code, we seperated it so that the program would repeat after every photo, something it wouldn't do before.</p>
+          <pre><code>while True:<br>  images = []<br> if btn.is_pressed:<br>    restart()</code></pre>
+        <p>Now, the program will execute the definition we established in the beginning, running the code until the shutter is pressed. Then, it continues the script until it hits <code>restart()</code>when it will be ready to take another picture.</p>
+    <h1>Conclusion</h1>
+      <p>When the code executes, the image that the Pi captures will be automatically uploaded via Dropbox's API to your specified Dropbox folder. From there, you can link the Dropbox account with <a href="https://www.ifttt.com">IFTTT</a> in order to set up automatic uploads to social media platforms like Twitter, Facebook, Tumblr, and more. <b>IFTTT</b> will upload the images added to the Dropbox folder every 5 minutes or so, so there might be a delay here; however, expect less than 5 seconds of delay when the image uploads to Dropbox initially.</p>
             </section>
       <footer>
         <p>This page is maintained by <a href="http://github.com/jkmarold55">Jake Marold</a></p>
