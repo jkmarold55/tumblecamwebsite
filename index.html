@@ -13,93 +13,139 @@
     <![endif]-->
   </head>
   <body>
-      <div class="wrapper">
-          <header>
-              <h1>Tumble Cam</h1>
-              <p>A Raspberry Pi-Powered Camera for the Social Generation</p>
-              <p class="view"><a href="https://github.com/jkmarold55/tumblecamera">View the Project on GitHub <small>jkmarold55/tumblecamera</small></a></p>
-              <ul>
-                  <li><a href="https://github.com/jkmarold55/tumblecamera/zipball/master">Download <strong>ZIP File</strong></a></li>
-                  <li><a href="https://github.com/jkmarold55/tumblecamera/tarball/master">Download <strong>TAR Ball</strong></a></li>
-                  <li><a href="https://thetumblecam.tumblr.com">View on <strong>Tumblr</strong></a></li>
-              </ul>
-          </header>
-          <section>
-              <h1>Overview</h1>
+    <div class="wrapper">
+      <header>
+        <h1>Tumble Cam</h1>
+        <p>A Raspberry Pi-Powered Camera for the Social Generation</p>
+        <p class="view"><a href="https://github.com/jkmarold55/tumblecamera">View the Project on GitHub <small>jkmarold55/tumblecamera</small></a></p>
+        <ul>
+          <li><a href="https://github.com/jkmarold55/tumblecamera/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/jkmarold55/tumblecamera/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://thetumblecam.tumblr.com">View on <strong>Tumblr</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Overview</h1>
 
-              <p><b>TumbleCam</b> is a digital camera that takes photographs and uploads them to Tumblr. When the shutter is pressed on the camera, a picture is taken and then uploaded to Dropbox, then it is transfered from there to the Tumblr page, where it is added to the feed.</p>
-              <img src="/images/top-min.jpg" alt="top view of camera">
-              <br>
+        <p><b>TumbleCam</b> is a digital camera that takes photographs and uploads them to Tumblr. When the shutter is pressed on the camera, a picture is taken and then uploaded to Dropbox, then it is transfered from there to the Tumblr page, where it is added to the feed.</p>
+        <img src="/images/top-min.jpg" alt="top view of camera">
+        <br>
 
+      
 
+        <h2>Materials</h2>
+        
+        <p>All materials that we used to build the camera are accompanied by Amazon links. <i><b>Note:</b> The links are not affiliate linked.</i></p>
+        
+        <ul>
+          <li><b>Raspberry Pi 3</b> Model B</b><a href="https://www.amazon.com/Raspberry-Pi-RASPBERRYPI3-MODB-1GB-Model-Motherboard/dp/B01CD5VC92/"> Purchase</a></li>
+          <ul>
+            <li>The Model B edition of the Raspberry Pi is camera-sized and has WiFi capabilities, allowing for an untethered, mobile camera.</li>
+          </ul>
+          <li><b>Raspberry Pi</b> Camera Module V2<a href="https://www.amazon.com/Raspberry-Pi-Camera-Module-Megapixel/dp/B01ER2SKFS"> Purchase</a></li>
+          <ul>
+            <li>After experimenting with a larger camera, the V2 was chosen because it was low profile (keeping the camera profile small) and it had excellent quality. The images come out at a crisp 1080p.</li>
+          </ul>
+          <li><b>NovoBeam NBP-3000</b> External Battery<a href="https://www.amazon.com/Novobeam-Ultra-Compact-Waterproof-Dustproof-Portable/dp/B00K3EUE90"> Purchase</a></li>
+          <ul>
+            <li>While the cylindrical shape was awkward, it suited the project's purposes because it was tin enough to simply be tethered to the side of the camera with velcro or even be used as a hand grip if mounted below the camera.</li>
+          </ul>
+          <li><b>MicroSD Card</b> <a href="https://www.amazon.com/Sandisk-Ultra-Micro-UHS-I-Adapter/dp/B073K14CVB/"> Purchase</a></li>
+          <ul>
+            <li>We recommend a 16GB SD card because the images will be stored locally as well as in the cloud for redundancy. More available space will allow more images to be taken before having to go into the project files and manually delete them.</li>
+            <li><b>Raspbian</b> is the operating system of choice. It is easy to use, and simple to set up.<a href="https://www.raspberrypi.org/downloads/raspbian/"> Download</a></li>
+          </ul>
+          <li><b>UCTRONICS UC-430</b> 3.5" Touch Display<a href="https://www.amazon.com/UCTRONICS-Display-Touch-Screen-Raspberry/"> Purchase</a></li>
+          <ul>
+            <li>The display serves to give the user a live preview of the image before it is taken as the viewfinder of the device. 3.5 inches allows it to be roughly the same size as the Raspberry Pi, allowing it to fit snugly in a case with the computer.</li>
+          </ul>
+        <h3>Chassis <i>Optional</i></h3>
+          <li><b>3D Printer</b></li>
+          <ul>
+            <li>While this may not be accessible to most, the printer allows for the whole device to come together as a working, finished product by producing a plastic chassis for the camera. The case will contain the buttons, wires, and other cables, preventing them from sticking out and having to carry a breadboard while using the camera.</li>
+          </ul>
+        </ul>
 
-              <h2>Materials</h2>
-
-              <p>All materials that we used to build the camera are accompanied by Amazon links. <i><b>Note:</b> The links are not affiliate linked.</i></p>
-
-              <ul>
-                  <li><b>Raspberry Pi 3</b> Model B</b><a href="https://www.amazon.com/Raspberry-Pi-RASPBERRYPI3-MODB-1GB-Model-Motherboard/dp/B01CD5VC92/"> Purchase</a></li>
-                  <ul>
-                      <li>The Model B edition of the Raspberry Pi is camera-sized and has WiFi capabilities, allowing for an untethered, mobile camera.</li>
-                  </ul>
-                  <li><b>Raspberry Pi</b> Camera Module V2<a href="https://www.amazon.com/Raspberry-Pi-Camera-Module-Megapixel/dp/B01ER2SKFS"> Purchase</a></li>
-                  <ul>
-                      <li>After experimenting with a larger camera, the V2 was chosen because it was low profile (keeping the camera profile small) and it had excellent quality. The images come out at a crisp 1080p.</li>
-                  </ul>
-                  <li><b>NovoBeam NBP-3000</b> External Battery<a href="https://www.amazon.com/Novobeam-Ultra-Compact-Waterproof-Dustproof-Portable/dp/B00K3EUE90"> Purchase</a></li>
-                  <ul>
-                      <li>While the cylindrical shape was awkward, it suited the project's purposes because it was tin enough to simply be tethered to the side of the camera with velcro or even be used as a hand grip if mounted below the camera.</li>
-                  </ul>
-                  <li><b>MicroSD Card</b> <a href="https://www.amazon.com/Sandisk-Ultra-Micro-UHS-I-Adapter/dp/B073K14CVB/"> Purchase</a></li>
-                  <ul>
-                      <li>We recommend a 16GB SD card because the images will be stored locally as well as in the cloud for redundancy. More available space will allow more images to be taken before having to go into the project files and manually delete them.</li>
-                      <li><b>Raspbian</b> is the operating system of choice. It is easy to use, and simple to set up.<a href="https://www.raspberrypi.org/downloads/raspbian/"> Download</a></li>
-                  </ul>
-                  <li><b>UCTRONICS UC-430</b> 3.5" Touch Display<a href="https://www.amazon.com/UCTRONICS-Display-Touch-Screen-Raspberry/"> Purchase</a></li>
-                  <ul>
-                      <li>The display serves to give the user a live preview of the image before it is taken as the viewfinder of the device. 3.5 inches allows it to be roughly the same size as the Raspberry Pi, allowing it to fit snugly in a case with the computer.</li>
-                  </ul>
-                  <h3>Chassis <i>Optional</i></h3>
-                  <li><b>3D Printer</b></li>
-                  <ul>
-                      <li>While this may not be accessible to most, the printer allows for the whole device to come together as a working, finished product by producing a plastic chassis for the camera. The case will contain the buttons, wires, and other cables, preventing them from sticking out and having to carry a breadboard while using the camera.</li>
-                  </ul>
-              </ul>
-
-              <h1>Code</h1>
-              <h2>Dropbox Uploader</h2>
-              <p>Extract this folder to the /home/pi directory. The main Python code will reference this library when it runs.</p>
-              <p><a href="https://github.com/jkmarold55/tumblecamwebsite/blob/gh-pages/Dropbox-Uploader-master.zip">Download</a></p>
-              <p>Next, authenticate Dropbox by running the following script:</p>
-              <pre><code>#If you get an "Insufficient privilages" error, run the BASH commands as SUDO.<br>$chmod +x /home/pi/Dropbox-Uploader-master/dropbox_uploader.sh<br>$./home/pi/Dropbox-Uploader-master/dropbox_uploader.sh
+    <h1>Code</h1>
+    <h2>Dropbox Uploader</h2>
+    <p>Extract this folder to the /home/pi directory. The main Python code will reference this library when it runs.</p>
+    <p><a href="https://github.com/jkmarold55/tumblecamwebsite/blob/gh-pages/Dropbox-Uploader-master.zip">Download</a></p>
+    <p>Next, authenticate Dropbox by running the following script:</p>
+    <pre><code>#If you get an "Insufficient privilages" error, run the BASH commands as SUDO.<br>$chmod +x /home/pi/Dropbox-Uploader-master/dropbox_uploader.sh<br>$./home/pi/Dropbox-Uploader-master/dropbox_uploader.sh
     </code></pre>
-              <p>The script will ask you to enter an authorization code. You can find this at <a href="https://www.dropbox.com/developers/apps">www.drobox.com/developers/apps</a>. You will have to create a Dropbox Developer account to access this dashboard, where you can create a new API enabled app. There should be a button to generate an API key. Simply copy and paste it into the script when prompted.</p>
-              <p>Special thanks to <a href="https://github.com/andreafabrizi/Dropbox-Uploader">Andrea Fabrizi</a> for the uploader.</p>
-              <h2>Prepare the Raspberry Pi</h2>
-              In the terminal, enable the camera by typing <code>sudo raspi-config</code>. With the arrow keys on the keyboard, select "Interfacing Options", then "Camera". Select the "Enable" option and press "Yes" to reboot. The Pi will enable its camera dependencies for use in the program.</p>
-              <h2>Main Script</h2>
-              <p>Create a new Python 3.XX file. At the top, establish the definition for the Dropbow-Upload code to use later. It will also set up timestamping for the image filenames.</p>
-              <pre><code>def restart():<br>   timestamp=datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")<br>   camera.capture(timestamp+".jpg")<br>   photofile = "/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload /home/pi/[PATH_TO_YOUR_PROJECT_FILES]"+timestamp+".jpg "+timestamp+".jpg "<br>   call([photofile], shell=True)</code></pre>
-              <p>Then, import the dependencies seperate from the definition:</p>
-              <pre><code>from picamera import PiCamera<br>from gpiozero import Button<br>from subprocess import call<br>from time import sleep<br>import datetime</code></pre>
-              <!--input type="checkbox" name="" id="switch">
-              <label for="switch" class="switch-label"
-              <div class="toggle"></div>
-              </label>-->
-          </section>
-          <footer>
-              <p>This page is maintained by <a href="http://github.com/jkmarold55">Jake Marold</a></p>
+    <p>The script will ask you to enter an authorization code. You can find this at <a href="https://www.dropbox.com/developers/apps">www.drobox.com/developers/apps</a>. You will have to create a Dropbox Developer account to access this dashboard, where you can create a new API enabled app. There should be a button to generate an API key. Simply copy and paste it into the script when prompted.</p>
+    <p>Special thanks to <a href="https://github.com/andreafabrizi/Dropbox-Uploader">Andrea Fabrizi</a> for the uploader.</p>
+    <h2>Prepare the Raspberry Pi</h2>
+    In the terminal, enable the camera by typing <code>sudo raspi-config</code>. With the arrow keys on the keyboard, select "Interfacing Options", then "Camera". Select the "Enable" option and press "Yes" to reboot. The Pi will enable its camera dependencies for use in the program.</p>
+    <h2>Main Script</h2>
+    <p>Create a new Python 3.XX file. At the top, establish the definition for the Dropbow-Upload code to use later. It will also set up timestamping for the image filenames.</p>
+    <pre><code>def restart():<br>   timestamp=datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")<br>   camera.capture(timestamp+".jpg")<br>   photofile = "/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload /home/pi/[PATH_TO_YOUR_PROJECT_FILES]"+timestamp+".jpg "+timestamp+".jpg "<br>   call([photofile], shell=True)</code></pre>
+    <p>Then, import the dependencies seperate from the definition:</p>
+    <pre><code>from picamera import PiCamera<br>from gpiozero import Button<br>from subprocess import call<br>from time import sleep<br>import datetime</code></pre>
+    <p>Next, the code will reference the definition we created above. Rather than combining the code from the definition into this section of the code, we seperated it so that the program would repeat after every photo, something it wouldn't do before.</p>
+    <pre><code></code></pre>
+            </section>
+      <footer>
+        <p>This page is maintained by <a href="http://github.com/jkmarold55">Jake Marold</a></p>
+        <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#72CDE1;}
+	.st1{fill:#0A4049;}
+	.st2{fill:#FFFFFF;}
+</style>
+<g id="head">
+	<circle class="st0" cx="150" cy="150" r="146.46"/>
+</g>
+<g id="Happy">
+	<g id="Smile">
+		<path class="st1" d="M149.82,215.11c-15.09,0-28.56-9.01-34.33-22.96c-1.45-3.5,0.22-7.51,3.71-8.95c3.5-1.44,7.51,0.22,8.95,3.71
+			c3.64,8.8,12.14,14.49,21.67,14.49c9.52,0,18.02-5.69,21.67-14.49c1.45-3.5,5.46-5.16,8.95-3.71c3.5,1.45,5.16,5.46,3.71,8.95
+			C178.39,206.1,164.91,215.11,149.82,215.11z"/>
+	</g>
+	<g id="Open-eyes_1">
+		<circle class="st1" cx="89.84" cy="150.37" r="23.96"/>
+		<circle class="st1" cx="208.97" cy="150.37" r="23.96"/>
+	</g>
+	<g id="Blink-eyes">
+		<path class="st1" d="M107.89,145.75c-2.91,0-5.27,2.36-5.27,5.27c0,7.04-5.73,12.77-12.77,12.77s-12.77-5.73-12.77-12.77
+			c0-2.91-2.36-5.27-5.27-5.27s-5.27,2.36-5.27,5.27c0,12.86,10.46,23.31,23.31,23.31s23.31-10.46,23.31-23.31
+			C113.16,148.11,110.8,145.75,107.89,145.75z"/>
+		<path class="st1" d="M227.01,145.75c-2.91,0-5.27,2.36-5.27,5.27c0,7.04-5.73,12.77-12.77,12.77c-7.04,0-12.77-5.73-12.77-12.77
+			c0-2.91-2.36-5.27-5.27-5.27c-2.91,0-5.27,2.36-5.27,5.27c0,12.86,10.46,23.31,23.31,23.31c12.86,0,23.31-10.46,23.31-23.31
+			C232.28,148.11,229.92,145.75,227.01,145.75z"/>
+	</g>
+</g>
+<g id="Ouch">
+	<g id="Frown">
+		<path class="st1" d="M149.82,166.46c15.09,0,28.56,9.01,34.33,22.96c1.45,3.5-0.22,7.51-3.71,8.95c-3.5,1.44-7.51-0.22-8.95-3.71
+			c-3.64-8.8-12.14-14.49-21.67-14.49c-9.52,0-18.02,5.69-21.67,14.49c-1.45,3.5-5.46,5.16-8.95,3.71c-3.5-1.45-5.16-5.46-3.71-8.95
+			C121.26,175.47,134.74,166.46,149.82,166.46z"/>
+	</g>
+	<g id="Open-eyes">
+		<path class="st1" d="M220.5,171.38c7.41-4.08,12.43-11.95,12.43-21.01c0-13.23-10.73-23.96-23.96-23.96
+			c-13.23,0-23.96,10.73-23.96,23.96c0,0.94,0.06,1.87,0.17,2.78C197.97,157.18,209.9,163.37,220.5,171.38z"/>
+		<path class="st1" d="M78.8,171.64c10.44-7.95,22.19-14.12,34.8-18.2c0.13-1.01,0.2-2.03,0.2-3.07c0-13.23-10.73-23.96-23.96-23.96
+			s-23.96,10.73-23.96,23.96C65.88,159.63,71.13,167.65,78.8,171.64z"/>
+	</g>
+	<g id="Tears-l">
+		<circle class="st2" cx="95.21" cy="137.32" r="8.05"/>
+		<circle class="st2" cx="79.1" cy="150" r="3.02"/>
+		<circle class="st2" cx="92.86" cy="153.02" r="3.02"/>
+	</g>
+	<g id="Tears-r">
+		<circle class="st2" cx="214.51" cy="137.32" r="8.05"/>
+		<circle class="st2" cx="198.4" cy="150" r="3.02"/>
+		<circle class="st2" cx="212.16" cy="153.02" r="3.02"/>
+	</g>
+</g>
+</svg>
 
-              
-
-
-          </footer>
-      </div>
-      <script src="javascripts/scale.fix.js"></script>
-      <script src="javascripts/scripts.js"></script>
-      <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-              integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-              crossorigin="anonymous"></script>
-
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    <script src="javascripts/script.js"></script>
   </body>
 </html>

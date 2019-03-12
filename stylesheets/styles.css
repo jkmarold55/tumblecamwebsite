@@ -213,6 +213,10 @@ header ul li + li + li {
   width:89px;
 }
 
+svg{
+  width: 50px;
+}
+
 header ul a strong {
   font-size:14px;
   display:block;
