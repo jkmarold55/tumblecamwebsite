@@ -26,7 +26,9 @@
         
       </header>
       <section>
+        <a href="#Overview"></a>
         <h1>Overview</h1>
+        
 
         <p><b>TumbleCam</b> is a digital camera that takes photographs and uploads them to Tumblr. When the shutter is pressed on the camera, a picture is taken and then uploaded to Dropbox, then it is transferred from there to the Tumblr page, where it is added to the feed.</p>
         <h2>Contents</h2>
@@ -48,6 +50,7 @@
         <img src="/images/top-min.jpg" alt="top view of camera">
         <br>
         <br>
+        <a href="#Materials"></a>
         <h2>Materials</h2>
         
         <p>All materials that we used to build the camera are accompanied by Amazon links. <i><b>Note:</b> The links are not affiliate linked.</i></p>
@@ -80,8 +83,9 @@
             <li>While this may not be accessible to most, the printer allows for the whole device to come together as a working, finished product by producing a plastic chassis for the camera. The case will contain the buttons, wires, and other cables, preventing them from sticking out and having to carry a breadboard while using the camera.</li>
           </ul>
         </ul>
-
+    <a href="#Code"></a>
     <h1>Code</h1>
+    <a href="#DropboxUploader"></a>
       <h2>Dropbox Uploader</h2>
         <p>Extract this folder to the /home/pi directory. The main Python code will reference this library when it runs.</p>
           <p><a href="https://github.com/jkmarold55/tumblecamwebsite/blob/gh-pages/Dropbox-Uploader-master.zip">Download</a></p>
@@ -92,7 +96,8 @@
         <p>Special thanks to <a href="https://github.com/andreafabrizi/Dropbox-Uploader">Andrea Fabrizi</a> for the uploader.</p>
       <h2>Prepare the Raspberry Pi</h2>
         <p>In the terminal, enable the camera by typing <code>sudo raspi-config</code>. With the arrow keys on the keyboard, select "Interfacing Options", then "Camera". Select the "Enable" option and press "Yes" to reboot. The Pi will enable its camera dependencies for use in the program.</p>
-      <h2>Main Script</h2>
+        <a href="#MainScript"></a>
+        <h2>Main Script</h2>
         <p>Create a new Python 3.XX file. At the top, establish the definition for the Dropbow-Upload code to use later. It will also set up timestamping for the image filenames.</p>
           <pre><code>def restart():<br>   timestamp=datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")<br>   camera.capture(timestamp+".jpg")<br>   photofile = "/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload /home/pi/[PATH_TO_YOUR_PROJECT_FILES]"+timestamp+".jpg "+timestamp+".jpg "<br>   call([photofile], shell=True)</code></pre>
         <p>Then, import the dependencies seperate from the definition:</p>
@@ -102,8 +107,10 @@
         <p>Next, the code will reference the definition we created above. Rather than combining the code from the definition into this section of the code, we seperated it so that the program would repeat after every photo, something it wouldn't do before.</p>
           <pre><code>while True:<br>  images = []<br> if btn.is_pressed:<br>    restart()</code></pre>
         <p>Now, the program will execute the definition we established in the beginning, running the code until the shutter is pressed. Then, it continues the script until it hits <code>restart()</code>when it will be ready to take another picture.</p>
+    <a href="#Conclusion"></a>
     <h1>Conclusion</h1>
       <p>When the code executes, the image that the Pi captures will be automatically uploaded via Dropbox's API to your specified Dropbox folder. From there, you can link the Dropbox account with <a href="https://www.ifttt.com">IFTTT</a> in order to set up automatic uploads to social media platforms like <b>Twitter</b>, <b>Facebook</b>, <b>Tumblr</b>, and more. <b>IFTTT</b> will upload the images added to the Dropbox folder every 5 minutes or so, so there might be a delay here; however, expect less than 5 seconds of delay when the image uploads to Dropbox initially.</p>
+    <a href="#Gallery"></a>
     <h1>Gallery</h1>
       <img src="IMG_20190312_150302-min.jpg">
       <img src="IMG_20190312_150313-min.jpg">
@@ -117,7 +124,7 @@
       <img src="IMG_20190312_151006-min.jpg">
       <img src=""
 
-            </section>
+    </section>
       <footer>
         <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
