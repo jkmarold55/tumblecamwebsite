@@ -80,7 +80,7 @@
         </ul>
         <br>
         <a name="Chassis"></a>
-      <h2>Chassis <i>Optional</i></h3>
+      <h2>Chassis</h3>
         <ul>
           <li><b>3D Printer</b></li>
           <ul>
@@ -88,6 +88,7 @@
             <li><a href="/tumblecamcase.stl">Download STL</a></li>
           </ul>
         </ul>
+        <br>
     <a name="Code"></a>
     <h1>Code</h1>
     <a name="DropboxUploader"></a>
@@ -112,10 +113,12 @@
         <p>Next, the code will reference the definition we created above. Rather than combining the code from the definition into this section of the code, we seperated it so that the program would repeat after every photo, something it wouldn't do before.</p>
           <pre><code>while True:<br>  images = []<br> if btn.is_pressed:<br>    restart()</code></pre>
         <p>Now, the program will execute the definition we established in the beginning, running the code until the shutter is pressed. Then, it continues the script until it hits <code>restart()</code>when it will be ready to take another picture.</p>
+    <br>
     <a name="Conclusion"></a>
     <h1>Conclusion</h1>
       <p>When the code executes, the image that the Pi captures will be automatically uploaded via Dropbox's API to your specified Dropbox folder. From there, you can link the Dropbox account with <a href="https://www.ifttt.com">IFTTT</a> in order to set up automatic uploads to social media platforms like <b>Twitter</b>, <b>Facebook</b>, <b>Tumblr</b>, and more. <b>IFTTT</b> will upload the images added to the Dropbox folder every 5 minutes or so, so there might be a delay here; however, expect less than 5 seconds of delay when the image uploads to Dropbox initially.</p>
-    <a name="Gallery"></a>
+    <br>
+      <a name="Gallery"></a>
     <h1>Gallery</h1>
       <img src="IMG_20190312_150302-min.jpg">
       <img src="IMG_20190312_150313-min.jpg">
@@ -128,7 +131,6 @@
       <img src="IMG_20190312_150939-min.jpg">
       <img src="IMG_20190312_151006-min.jpg">
     </section>
-
 <footer>
         <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
